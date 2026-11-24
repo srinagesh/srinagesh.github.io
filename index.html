@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Srinagesh Sharma</title>
+  <meta name="description" content="Srinagesh Sharma. Research scientist and engineer: on-policy distillation, post-training for Microsoft Copilot, and reinforcement learning for large language models.">
+  <meta property="og:title" content="Srinagesh Sharma">
+  <meta property="og:description" content="Research scientist and engineer: on-policy distillation, post-training for Microsoft Copilot, and reinforcement learning for large language models.">
+  <meta property="og:type" content="profile">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231F3A5F'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23FBFBFC'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- tokens ---------- */
+    :root {
+      --paper:  #FBFBFC;   /* page */
+      --ink:    #1C2733;   /* body text */
+      --navy:   #1F3A5F;   /* accent, shared with the PDF resume */
+      --slate:  #5D6B7A;   /* secondary text: dates, venues, authors */
+      --rule:   #DCE1E7;   /* thin structural lines */
+      --marker: #7E97B4;   /* list markers */
+      --measure: 42rem;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #141B24;
+        --ink:   #E2E7ED;
+        --navy:  #9DBBDD;
+        --slate: #93A1B0;
+        --rule:  #2A3644;
+        --marker: #5F7C9E;
+      }
+    }
+
+    /* ---------- base ---------- */
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+      font-size: 1.125rem;          /* 18px */
+      line-height: 1.6;
+      font-feature-settings: "kern", "liga", "onum";
+    }
+    main { max-width: var(--measure); margin: 0 auto; padding: 4.5rem 1.5rem 5rem; }
+    a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: color-mix(in srgb, var(--navy) 40%, transparent); }
+    a:hover { text-decoration-color: currentColor; }
+    a:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; border-radius: 2px; }
+    p { margin: 0 0 1rem; }
+    strong { font-weight: 600; }
+
+    /* ---------- hero ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin: 0 0 1rem;
+      font-variation-settings: "opsz" 72;
+    }
+    .role { font-size: 1.2rem; line-height: 1.45; margin: 0 0 1.25rem; color: var(--slate); font-style: italic; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin: 0; padding: 0; list-style: none; font-size: 1.05rem; }
+
+    /* portrait: images/profile.jpg, 3:4 */
+    .portrait {
+      position: relative;
+      width: 11rem;
+      aspect-ratio: 3 / 4;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--paper);
+      display: grid; place-items: center;
+      font-size: 2.4rem; letter-spacing: 0.02em;
+    }
+    .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ---------- sections ---------- */
+    section { margin-top: 3.25rem; }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+      color: var(--navy);
+    }
+    .about p:last-child { margin-bottom: 0; }
+
+    /* dated lists: news, experience (genuinely chronological, so dates lead) */
+    .dated { list-style: none; margin: 0; padding: 0; }
+    .dated li {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0 1.25rem;
+      padding: 0.55rem 0;
+    }
+    .dated .when { color: var(--slate); font-variant-numeric: oldstyle-nums tabular-nums; font-size: 1rem; padding-top: 0.08rem; }
+    .dated .what p { margin: 0.2rem 0 0; color: var(--slate); font-size: 1.02rem; line-height: 1.5; }
+    .org { color: var(--slate); }
+
+    /* publications */
+    .pubs { list-style: none; margin: 0; padding: 0; }
+    .pubs li { margin: 0 0 1.35rem; }
+    .pubs .title { font-weight: 500; font-size: 1.12rem; line-height: 1.4; }
+    .pubs .title a { color: var(--ink); text-decoration-color: var(--rule); }
+    .pubs .title a:hover { color: var(--navy); text-decoration-color: currentColor; }
+    .pubs .authors, .pubs .venue { display: block; font-size: 1rem; line-height: 1.45; color: var(--slate); }
+    .pubs .authors strong { color: var(--ink); font-weight: 600; }
+    .pubs .venue em { font-style: italic; }
+    .award { color: var(--navy); font-style: italic; }
+    .note { font-size: 0.95rem; color: var(--slate); margin: -0.5rem 0 1.25rem; }
+
+    /* plain lists */
+    .plain { margin: 0; padding-left: 1.1rem; }
+    .plain li { margin: 0 0 0.6rem; padding-left: 0.2rem; }
+    .plain li::marker { color: var(--marker); }
+    .plain .meta { display: block; color: var(--slate); font-size: 1rem; line-height: 1.45; }
+
+    footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.95rem; color: var(--slate); }
+
+    /* ---------- small screens ---------- */
+    @media (max-width: 40rem) {
+      main { padding-top: 2.5rem; }
+      .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+      .portrait { width: 8.5rem; order: -1; font-size: 1.9rem; }
+      .dated li { grid-template-columns: 1fr; }
+      .dated .when { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header class="hero">
+    <div>
+      <h1>Srinagesh Sharma</h1>
+      <p class="role">Research scientist and engineer: Post-training for Microsoft Copilot, on-policy distillation and reinforcement learning for large language models.</p>
+      <ul class="links">
+        <li><a href="mailto:srinageshsharma@gmail.com">Email</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+        <li><a href="https://scholar.google.com/citations?user=szcf_iUAAAAJ">Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/srinagsharma">LinkedIn</a></li>
+        <li><a href="https://github.com/srinagesh">GitHub</a></li>
+      </ul>
+    </div>
+
+    <!-- Photo: images/profile.jpg (3:4 portrait). Until it exists, the initials show. -->
+    <div class="portrait">
+      <span aria-hidden="true">SS</span>
+      <img src="images/profile.jpg" alt="Photo of Srinagesh Sharma" onerror="this.remove()">
+    </div>
+  </header>
+
+  <section class="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <p>I'm a Principal Applied Scientist and Technical Advisor in Microsoft's Office of the CTO, where I advise on post-training research.</p>
+    <p>Before this, I led a team at Microsoft Turing post-training frontier reasoning models for Copilot, and was science lead for Expert Answers in Microsoft 365 Copilot Tuning, now Frontier Tuning, which post-trains a specialized models for enterprises.</p>
+    <p>I did my Ph.D. at the University of Michigan, where I was advised by <a href="https://web.eecs.umich.edu/~cscott">Clayton Scott</a> and <a href="https://aero.engin.umich.edu/people/cutler-james-w">James Cutler</a>. I worked on machine learning for spacecraft: contextual bandits for adaptive sensor selection, kernel methods for tracking swarms of satellites, and the sensor and communication systems for six nanosatellite missions as part of <a href="https://exploration.engin.umich.edu">MXL</a>.</p>
+  </section>
+
+  <section aria-labelledby="news-h">
+    <h2 id="news-h">News</h2>
+    <ul class="dated">
+      <li><span class="when">Aug 2026</span><span class="what">Joined Microsoft's Office of the CTO as Technical Advisor for post-training research.</span></li>
+      <li><span class="when">Jul 2025</span><span class="what"><a href="https://proceedings.mlr.press/v267/xu25c.html">RLTHF</a> presented at ICML 2025.</span></li>
+      <li><span class="when">May 2025</span><span class="what"><a href="https://www.microsoft.com/en-us/microsoft-365/blog/?p=276746">Microsoft 365 Copilot Tuning</a>, including Expert Answers, announced at Microsoft Build.</span></li>
+      <li><span class="when">Apr 2025</span><span class="what"><a href="https://arxiv.org/abs/2410.03524">Steering LLMs between code execution and textual reasoning</a> presented at ICLR 2025.</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="exp-h">
+    <h2 id="exp-h">Experience</h2>
+    <ul class="dated">
+      <li>
+        <span class="when">2026&ndash;now</span>
+        <span class="what"><strong>Principal Applied Scientist &amp; Technical Advisor</strong>, <span class="org">Microsoft, Office of the CTO</span>
+          <p>Advising Microsoft leadership on post-training research.</p></span>
+      </li>
+      <li>
+        <span class="when">2025&ndash;2026</span>
+        <span class="what"><strong>Senior Applied Scientist &amp; Tech Lead</strong>, <span class="org">Microsoft Turing</span>
+          <p>Led a team on post-training and distillation of frontier reasoning models for Copilot, including on-policy distillation across model families.</p></span>
+      </li>
+      <li>
+        <span class="when">2022&ndash;2025</span>
+        <span class="what"><strong>Senior Applied Scientist</strong>, <span class="org">Microsoft MSAI and Frontier Tuning</span>
+          <p>Science lead for Expert Answers in Copilot Tuning; research on constrained RL (DRO) and targeted human feedback (RLTHF); LLM systems for proactive assistance and personalized replies, shipped in Outlook.</p></span>
+      </li>
+      <li>
+        <span class="when">2018&ndash;2022</span>
+        <span class="what"><strong>Applied Scientist II</strong>, <span class="org">Microsoft MSAI</span>
+          <p>Built Spiral, a weak-supervision library that learns from implicit user signals, used for email triage and phishing detection in Outlook.</p></span>
+      </li>
+      <li>
+        <span class="when">2013&ndash;2018</span>
+        <span class="what"><strong>Graduate Research Assistant</strong>, <span class="org">University of Michigan</span>
+          <p>Machine learning for spacecraft state estimation, in partnership with NASA JPL.</p></span>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="pubs-h">
+    <h2 id="pubs-h">Selected publications</h2>
+    <p class="note">* Equal contribution. Full list on <a href="https://scholar.google.com/citations?user=szcf_iUAAAAJ">Google Scholar</a>.</p>
+    <ol class="pubs" reversed>
+      <li>
+        <span class="title"><a href="https://arxiv.org/abs/2506.13351">Direct Reasoning Optimization: Token-Level Reasoning Reflectivity Meets Rubric Gates for Unverifiable Tasks</a></span>
+        <span class="authors">Y. Xu, T. Chakraborty, <strong>S. Sharma</strong>, L. Nunes, S. Sharma, K. D. Demopulos, E. Kıcıman, S. Lu, R. Chandra</span>
+        <span class="venue">Under review, 2025</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://arxiv.org/abs/2502.13417">RLTHF: Targeted Human Feedback for LLM Alignment</a></span>
+        <span class="authors">Y. Xu, T. Chakraborty, E. Kıcıman, B. Aryal, <strong>S. Sharma</strong>, S. Lu, R. Chandra</span>
+        <span class="venue"><em>ICML</em>, 2025</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://arxiv.org/abs/2410.03524">Steering Large Language Models between Code Execution and Textual Reasoning</a></span>
+        <span class="authors">Y. Chen, H. Jhamtani, <strong>S. Sharma</strong>, C. Fan, C. Wang</span>
+        <span class="venue"><em>ICLR</em>, 2025</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://aclanthology.org/2023.findings-emnlp.43/">Counterfactual Augmentation for Multimodal Learning Under Presentation Bias</a></span>
+        <span class="authors">X. V. Lin, L.-P. Morency, D. Dimitriadis, <strong>S. Sharma</strong></span>
+        <span class="venue"><em>Findings of EMNLP</em>, 2023</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://arxiv.org/abs/1810.07371">Simple Regret Minimization for Contextual Bandits</a></span>
+        <span class="authors">A. Deshmukh*, <strong>S. Sharma</strong>*, J. Cutler, M. Moldwin, C. Scott</span>
+        <span class="venue"><em>ICML Workshop on Exploration in RL</em>, 2019 &nbsp;<span class="award">Best paper award</span></span>
+      </li>
+      <li>
+        <span class="title"><a href="https://arxiv.org/abs/1905.10392">A Generalization Error Bound for Multi-class Domain Generalization</a></span>
+        <span class="authors">A. Deshmukh, Y. Lei, <strong>S. Sharma</strong>, U. Dogan, J. Cutler, C. Scott</span>
+        <span class="venue">arXiv, 2019</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://arxiv.org/abs/1803.00650">Kernel Embedding Approaches to Orbit Determination of Spacecraft Clusters</a></span>
+        <span class="authors"><strong>S. Sharma</strong>, J. Cutler</span>
+        <span class="venue">arXiv, 2018</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://lld-workshop.github.io/2017/papers/LLD_2017_paper_63.pdf">Multiclass Domain Generalization</a></span>
+        <span class="authors">A. Deshmukh, <strong>S. Sharma</strong>, J. Cutler, C. Scott</span>
+        <span class="venue"><em>NIPS Workshop on Learning with Limited Labeled Data</em>, 2017</span>
+      </li>
+      <li>
+        <span class="title"><a href="https://tmo.jpl.nasa.gov/progress_report/42-203/203D.pdf">Robust Orbit Determination and Classification: A Learning Theoretic Approach</a></span>
+        <span class="authors"><strong>S. Sharma</strong>, J. Cutler</span>
+        <span class="venue"><em>Interplanetary Network Progress Report</em>, NASA JPL, 2015</span>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="pat-h">
+    <h2 id="pat-h">Patents</h2>
+    <ul class="plain">
+      <li><a href="https://patents.justia.com/patent/20260134019">Dense Context Engine in an Artificial Intelligence System</a> <span class="meta">US Patent App. 2026/0134019, filed 2024</span></li>
+      <li><a href="https://patexia.com/us/publication/20250259020">Implicit User Prompt Rewriting</a> <span class="meta">US Patent App. 2025/0259020, filed 2024</span></li>
+      <li><a href="https://patents.google.com/patent/US20240419487A1/en">Proactive Execution System</a> <span class="meta">US Patent App. 2024/0419487, filed 2023, first inventor</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="edu-h">
+    <h2 id="edu-h">Education</h2>
+    <ul class="dated">
+      <li><span class="when">2011&ndash;2018</span><span class="what"><strong>Ph.D. and M.S., Electrical Engineering: Systems</strong>, <span class="org">University of Michigan</span>
+        <p>Thesis: <a href="https://deepblue.lib.umich.edu/handle/2027.42/147688">Machine Learning Applications in Spacecraft State and Environment Estimation</a></p></span></li>
+      <li><span class="when">2007&ndash;2011</span><span class="what"><strong>B.E., Electrical and Communications Engineering</strong>, <span class="org">BMS College of Engineering</span></span></li>
+    </ul>
+  </section>
+
+  <footer>Last updated November 2026.</footer>
+</main>
+</body>
+</html>
